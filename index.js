@@ -23,14 +23,7 @@ const PORT = process.env.PORT || 8080;
 
 // CORS configuration to allow requests from multiple domains, including local dev
 const allowedOrigins = [
-  // 'https://leveragex.onrender.com',  // Old domain
-  // 'https://leveragex.in',            // New domain
-  // 'https://leveragex-frontend.onrender.com',
-  // 'https://leveragex-kuxu.onrender.com',  // 11-jan-2025
-  // 'https://leveragex-9ndu.onrender.com',     // 31-march-2025
-  // 'https://leveragex-4p2t.onrender.com',
-  'https://leveragex-oqsf.onrender.com',        // 31-may-2025
-  'https://leveragex-rrf8.onrender.com',        // 1-aug-2025
+  'https://tradx.onrender.com',       // 18-oct-2025
   'http://localhost:3000',            // Local development environment
 ];
 
@@ -121,3 +114,4 @@ app.get('/putBalance', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
