@@ -23,8 +23,9 @@ const PORT = process.env.PORT || 8080;
 
 // CORS configuration to allow requests from multiple domains, including local dev
 const allowedOrigins = [
-  'https://tradx.onrender.com',       // 18-oct-2025
-  'http://localhost:3000',            // Local development environment
+  'http://localhost:3000',
+  'http://10.141.34.210:3000',           // Local development environment
+  'https://tradx.onrender.com',  
 ];
 
 const corsOptions = {
@@ -114,4 +115,3 @@ app.get('/putBalance', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
