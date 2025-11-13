@@ -6,6 +6,9 @@ const cors = require('cors');
 require('dotenv').config();
 require('./Models/db'); // Ensure database connection
 
+const ensureAuthenticated = require("./Middlewares/auth");
+const adminOnly = require("./Middlewares/adminOnly");
+
 // Import routes
 const AuthRouter = require('./Routes/authRoutes.js');
 const plansRouter = require('./Routes/plansRouter');
@@ -108,6 +111,11 @@ app.get('/putBalance', async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: 'Error fetching data', error: err });
   }
+});
+
+// Admin Dashboard Verification
+app.get("/dashboard", ensureAuthenticated, adminOnly, (req, res) => {
+  res.json({ message: "Welcome Admin" });
 });
 
 // Start the server
